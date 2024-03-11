@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonLabels:
+  app: nadav-test-march-10
+configMapGenerator:
+- name: nadav-test-march-10-configmap
+  envs:
+  - .env
+generatorOptions:
+  disableNameSuffixHash: true # use a static name
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml

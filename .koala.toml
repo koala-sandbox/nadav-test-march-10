@@ -1,0 +1,58 @@
+ServiceName = "nadav-test-march-10"
+Name = "nadav-test-march-10"
+Description = "Hello"
+Owners = ["nadaverell@gmail.com"]
+ServerFramework = "go-server"
+ServerMain = ""
+ArtifactRepository = "me-west1-docker.pkg.dev/koala-ops-demo-373407/koala-repo"
+Domain = "cluster.koalaops.com"
+Port = 8080
+
+[KoalaVersionInfo]
+  Version = "1.1.61"
+  DeployWorkflowVersion = "1.1.61"
+
+[Repo]
+  Name = "nadav-test-march-10"
+  GitUser = "koala-sandbox"
+  URL = ""
+  Path = ""
+  Token = ""
+
+[OpenAPIConfig]
+  SpecPath = ""
+  QueryPath = ""
+  CodegenTool = ""
+
+[[Environments]]
+  Name = "dev"
+  Namespace = "dev"
+  Cluster = "koala-demo-cluster"
+  IngressEnabled = true
+  IngressHost = "dev.nadav-test-march-10.koala-demo-cluster.cluster.koalaops.com"
+  [Environments.EnvDeploymentConfig]
+    AutoDeploy = true
+    HPAEnabled = false
+    HPAMaxReplicas = 0
+    HPATargetCPUUtilizationPercentage = 0
+    HPATargetMemoryUtilizationPercentage = 0
+
+[SSLConfig]
+  CertName = "nadav-test-march-10-tls-cert"
+  Issuer = "letsencrypt"
+  IssuerContactEmail = "nadaverell@gmail.com"
+
+[Metrics]
+  Collector = ""
+  [Metrics.Endpoint]
+    Path = ""
+    Port = 0
+    Scheme = ""
+    Interval = ""
+
+[Tracing]
+  Backend = ""
+  URL = ""
+
+[Profiling]
+  Tool = ""
